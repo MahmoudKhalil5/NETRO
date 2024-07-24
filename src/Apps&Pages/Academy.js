@@ -2,8 +2,8 @@ import React from 'react'
 
 function Academy() {
   return (
-    <h1>Academy</h1>
+    <div>Academy</div>
   )
 }
 
-export default Academy;
+export default Academy
