@@ -1,0 +1,6 @@
+.botContainer{
+    width: 100%;
+    height: calc(100% - 54px);
+    background: #f89e9e44;
+    position: relative;
+}

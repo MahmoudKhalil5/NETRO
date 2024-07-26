@@ -2,6 +2,8 @@
     width: calc(100% - 100px);
     padding: 16px;
     padding-top: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
 .topContainer{

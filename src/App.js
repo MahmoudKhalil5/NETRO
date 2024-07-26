@@ -1,40 +1,45 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Import necessary components for routing
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Menu from './Commponents/Menu';
-import Dashboards from './Apps&Pages/Dashboards.js';
 import Container from './Commponents/Container';
-import ECommerce from './Apps&Pages/ECommerce.js';
-import Academy from './Apps&Pages/Academy.js'
-import Logistics from './Apps&Pages/Logistics.js';
-import Users from './Apps&Pages/Users.js';
-import Email from './Apps&Pages/Email.js';
-import Chat from './Apps&Pages/Chat.js';
-import Calender from './Apps&Pages/Calender.js';
-import Kanban from './Apps&Pages/Kanban.js';
-import Invoice from './Apps&Pages/Invoice.js';
-import RolesAndPremissed from './Apps&Pages/RolesAndPremissed.js'
+
+import Dashboards from './Apps&Pages/Dashboards';
+import ECommerce from './Apps&Pages/ECommerce';
+import Academy from './Apps&Pages/Academy';
+import Logistics from './Apps&Pages/Logistics';
+import Users from './Apps&Pages/Users';
+import Email from './Apps&Pages/Email';
+import Chat from './Apps&Pages/Chat';
+import Calendar from './Apps&Pages/Calender';
+import Kanban from './Apps&Pages/Kanban';
+import Invoice from './Apps&Pages/Invoice';
+import RolesAndPermissions from './Apps&Pages/RolesAndPremissed';
+import MainContainer from './Commponents/MainContainer';
+
 
 function App() {
   return (
-    <Router> {/* Wrap the entire app in Router */}
+<Router>
       <div className="App">
         <Menu /> {/* Render the Menu component */}
-        <Routes>  {/* Define the Routes */}
-          <Route path="/" element={<Dashboards />} />  {/* Default route */}
-          <Route path="/dashboards" element={<Container />} />
-          <Route path="/eCommerce" element={<ECommerce />} />
-          <Route path="/academy" element={<Academy />} />
-          <Route path="/logistics" element={<Logistics />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/email" element={<Email />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/calender" element={<Calender />} />
-          <Route path="/kanban" element={<Kanban />} />
-          <Route path="/invoice" element={<Invoice />} />
-          <Route path="/rolesAndPremissed" element={<RolesAndPremissed />} />
-        </Routes>
+        <Container> {/* Container now wraps the Routes */}
+          <Routes>
+            <Route path="/" element={<Dashboards />} />
+            <Route path="/dashboards" element={<Dashboards />} />
+            <Route path="/ecommerce" element={<ECommerce />} />
+            <Route path="/academy" element={<Academy />} />
+            <Route path="/logistics" element={<Logistics />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="/email" element={<Email />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/kanban" element={<Kanban />} />
+            <Route path="/invoice" element={<Invoice />} />
+            <Route path="/rolesAndPermissions" element={<RolesAndPermissions />} />
+          </Routes>
+        </Container>
       </div>
     </Router>
   );

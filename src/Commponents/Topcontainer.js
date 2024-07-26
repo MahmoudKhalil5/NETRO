@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { IoSearchOutline, IoChevronDown  } from "react-icons/io5";
 import { FaRegBell  } from "react-icons/fa";
-import Mahmoud1 from '../img/Mahmoud1.jpg'
+import Mahmoud1 from '../img/Mahmoud1.jpg';
 
 
 function Topcontainer() {

@@ -1,13 +1,18 @@
-import React from 'react'
-import './Container.css'
-import Topcontainer from './Topcontainer'
+import React from 'react';
+import './Container.css';
+import Topcontainer from './Topcontainer';
+import BotContainer from './BotContainer';
 
-function Container() {
+function Container({ children }) {
   return (
     <div className='container'>
-        <Topcontainer/>
+      <Topcontainer />
+      <div className='mainContainer'>
+        {children}
+      </div>
+      <BotContainer/>
     </div>
-  )
+  );
 }
 
-export default Container
+export default Container;

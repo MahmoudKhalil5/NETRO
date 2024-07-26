@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo.PNG';
 import './Menu.css';
 import { LiaDotCircleSolid } from "react-icons/lia";
-import { TbSmartHome } from 'react-icons/tb';
-import { IoCartOutline, IoChatbubbleEllipsesOutline } from 'react-icons/io5';
+import { TbSmartHome, TbTypography, TbBrandTabler  } from 'react-icons/tb';
+import { IoCartOutline, IoChatbubbleEllipsesOutline, IoSquareOutline  } from 'react-icons/io5';
 import { MdOutlineSchool, MdOutlineEmail, MdLockOutline } from 'react-icons/md';
-import { LiaCarSideSolid } from 'react-icons/lia';
+import { LiaCarSideSolid, LiaFileInvoiceSolid  } from 'react-icons/lia';
 import { FiCopy, FiUser } from 'react-icons/fi';
-import { LuFileText } from 'react-icons/lu';
 import { BsCalendar2Event } from 'react-icons/bs';
+import { CiFileOn } from "react-icons/ci";
+import { GoShieldLock } from "react-icons/go";
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
+import { PiChartBarLight } from "react-icons/pi";
+
+
 
 const Icon = ({ icon, path, name }) => (
   <li>
@@ -31,14 +36,14 @@ function Menu() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 525) {
-        setCollapsed(true); // Automatically collapse in mobile view
+        setCollapsed(true);
       } else {
-        setCollapsed(false); // Expand in larger view
+        setCollapsed(false);
       }
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Check initial state
+    handleResize();
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -56,13 +61,14 @@ function Menu() {
           <LiaDotCircleSolid />
         </div>
       </div>
-      {!collapsed && (
+
+      <ul id="mainMenu">
+        <Icon icon={<TbSmartHome />} path="/dashboards" name="Dashboards" />
+        {!collapsed && (
         <div className="Parag">
           <p>APPS & PAGES</p>
         </div>
-      )}
-      <ul id="mainMenu">
-        <Icon icon={<TbSmartHome />} path="/dashboards" name="Dashboards" />
+      )};
         <Icon icon={<IoCartOutline />} path="/ecommerce" name="eCommerce" />
         <Icon icon={<MdOutlineSchool />} path="/academy" name="Academy" />
         <Icon icon={<LiaCarSideSolid />} path="/logistics" name="Logistics" />
@@ -70,11 +76,26 @@ function Menu() {
         <Icon icon={<MdOutlineEmail />} path="/email" name="Email" />
         <Icon icon={<IoChatbubbleEllipsesOutline />} path="/chat" name="Chat" />
         <Icon icon={<BsCalendar2Event />} path="/calendar" name="Calendar" />
-        <Icon icon={<FiCopy />} path="/copy" name="Copy" />
-        <Icon icon={<LiaCarSideSolid />} path="/drive" name="Drive" />
-        <Icon icon={<MdOutlineEmail />} path="/email2" name="Secondary Email" />
-        <Icon icon={<LuFileText />} path="/docs" name="Documents" />
-        <Icon icon={<IoChatbubbleEllipsesOutline />} path="/discussion" name="Discussion" />
+        <Icon icon={<FiCopy />} path="/kanban" name="Kanban" />
+        <Icon icon={<LiaFileInvoiceSolid  />} path="/invoice" name="invoice" />
+        <Icon icon={<MdLockOutline />} path="/rolesAndPermissions" name="Roles & Permissions" />
+        {!collapsed && (
+        <div className="Parag">
+          <p>PAGES</p>
+        </div>
+        )};
+        <Icon icon={<CiFileOn  />} path="/pages" name="Pages" />
+        <Icon icon={<GoShieldLock />} path="/authentications" name="Authentications" />
+        <Icon icon={<HiOutlineDotsHorizontal />} path="/wizardExamples" name="Wizard Examples" />
+        <Icon icon={<IoSquareOutline />} path="/dialogExamples" name="Dialog Examples" />
+        {!collapsed && (
+        <div className="Parag">
+          <p>USER INTERFACE</p>
+        </div>
+        )};
+        <Icon icon={<TbTypography />} path="/typography" name="Typography" />
+        <Icon icon={<TbBrandTabler />} path="/icons" name="Icons" />
+        <Icon icon={<PiChartBarLight />} path="/cards" name="Cards" />
       </ul>
     </menu>
   );
